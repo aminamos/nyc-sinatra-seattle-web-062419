@@ -1,6 +1,8 @@
-<h2>All Historical Landmarks</h2>
+<h2>All Historical Figures</h2>
 
-<!-- add content here -->
-
+<%@all_figs.each do |fig| %>
+  <%= fig.name %>
+  <br>
+<% end %>
 <a class="button" href="/figures">Figures</a>
 <a class="button" href="/">Home</a>

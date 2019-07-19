@@ -1,9 +1,12 @@
 <table>
   <tr>
-    <th>Name</th>
+    <h1>Name</h1>
   </tr>
   <tr>
-    <td><%= @figure.name %></td>
+    <ul>
+      <li><%= @figure.name %></li>
+      <li><%= Title.find(FigureTitle.find_by(figure_id: @figure.id).title_id).name %>
+    </ul>
   </tr>
 <table>
 

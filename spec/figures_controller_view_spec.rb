@@ -28,7 +28,7 @@ describe FiguresController do
 
   it "allows you to create a new figure with a title" do
     visit '/figures/new'
-    fill_in :figure_name, :with => "Doctor Who"
+    fill_in "figure_name", with: "Doctor Who"
     check "title_#{Title.first.id}"
     click_button "Create New Figure"
     figure = Figure.last
@@ -39,7 +39,7 @@ describe FiguresController do
 
   it "allows you to create a new figure with a landmark" do
     visit '/figures/new'
-    fill_in :figure_name, :with => "Doctor Who"
+    fill_in "figure_name", with: "Doctor Who"
     check "landmark_#{Landmark.first.id}"
     click_button "Create New Figure"
     figure = Figure.last
@@ -50,8 +50,8 @@ describe FiguresController do
 
    it "allows you to create a new figure with a new title" do
     visit '/figures/new'
-    fill_in :figure_name, :with => "Doctor Who"
-    fill_in :new_title, :with => "Time Lord"
+    fill_in "figure_name", with: "Doctor Who"
+    fill_in "new_title", with: "Time Lord"
     click_button "Create New Figure"
     figure = Figure.last
     title = Title.last
@@ -63,8 +63,8 @@ describe FiguresController do
 
   it "allows you to create a new figure with a new landmark" do
     visit '/figures/new'
-    fill_in :figure_name, :with => "Doctor Who"
-    fill_in :new_landmark, :with => "The Tardis"
+    fill_in "figure_name", with: "Doctor Who"
+    fill_in "new_landmark", with: "The Tardis"
     click_button "Create New Figure"
     figure = Figure.last
     landmark = Landmark.last
@@ -117,7 +117,7 @@ describe FiguresController do
   it "allows you to edit a single figure" do
     @original_figure = Figure.first
     visit "/figures/#{@original_figure.id}/edit"
-    fill_in :figure_name, with: "Missy"
+    fill_in "figure_name", with: "Missy"
     fill_in :new_landmark, with: "Big Tower"
     click_button "Edit Figure"
 
